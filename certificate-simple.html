@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8'><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Certificate - Simple</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main-center">
+    <div class="card auth-card">
+      <h2>Certificate of Completion</h2>
+      <p id="certTextSimple"></p>
+      <div class="row">
+        <button id="printSimple" class="btn outline">Print</button>
+      </div>
+    </div>
+  </div>
+<script>
+const last = JSON.parse(sessionStorage.getItem('ai_last_result')||'null');
+document.getElementById('certTextSimple').innerText = last ? (last.name + ' completed ' + last.domain + ' with score ' + last.score) : 'No recent result.';
+document.getElementById('printSimple').addEventListener('click', ()=>window.print());
+</script>
+</body>
+</html>
